@@ -6,7 +6,65 @@
 sudo apt-get install nodejs mysql-server
 ```
 
-**Command for creating database.**
+**Nodejs basic commands**
+
+execute js console
+``` 
+node 
+
+```
+
+execute programm
+``` 
+node YOUR_PROGRAMM.js
+
+```
+
+version check
+``` 
+node -v
+
+```
+
+node help center
+``` 
+node -h
+
+```
+
+**Node 'HelloWorld.js'**
+
+make HelloWorld.js file
+```
+touch HelloWorld.js
+
+```
+open file in some text editor and insert this code
+```
+var http = require('http');
+
+http.createServer(function (req, res) {
+  res.writeHead(200, {'Content-Type': 'text/plain'});
+  res.end('Hello World!');
+}).listen(8080); 
+```
+run command
+```
+node HelloWorld.js
+
+```
+
+**Command For Managing database**
+
+*user*: '**root**'
+
+*password*: ''
+``` 
+sudo mysql -u root
+```
+after this command sreate database and table
+
+**Command for creating database. Creating table. Inserting test data**
 ``` 
 CREATE DATABASE db_nodejs_1; 
 
@@ -21,7 +79,7 @@ INSERT `db_nodejs_1`.`users` VALUES (
    '1', 
    'Ulan', 
    '25', 
-   '3h[*]0HY9Ho7Go&g987GTP9oTP9GY'
+   '3h0HY9Ho7Go&g987GTP9oTP9GY'
 )
 
 ```
