@@ -90,7 +90,7 @@ INSERT `db_nodejs_1`.`users` VALUES (
 sudo npm install --save express body-parser serve-static mysql
 
 ```
-
+<!--
 
 **User Agent JS**
 
@@ -136,4 +136,4 @@ server.listen(3000, ()=>{
 
 **DataBase Connection sample**
 ```
-
+-->
