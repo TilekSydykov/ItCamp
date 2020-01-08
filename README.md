@@ -87,8 +87,8 @@ INSERT db_nodejs_1.users VALUES (
 **Set environment for node:**
 
 ```
-sudo npm install --save express body-parser serve-static mysql  express-error-handler
-
+npm init
+npm install --save express body-parser serve-static mysql  express-error-handler
 ```
 <!--
 
