@@ -82,6 +82,9 @@ INSERT db_nodejs_1.users VALUES (
    '3h0HY9Ho7Go&g987GTP9oTP9GY'
 );
 
+CREATE USER 'itcamp'@'localhost' IDENTIFIED BY 'itcamp';
+GRANT ALL PRIVILEGES ON db_nodejs_1.* TO 'itcamp'@'localhost';
+
 ```
 
 **Set environment for node:**
@@ -137,3 +140,5 @@ server.listen(3000, ()=>{
 **DataBase Connection sample**
 ```
 -->
+
+
