@@ -10,43 +10,28 @@ const app = express();
 let pool = mysql.createPool({
     connectionLimit: 10,
     host: "localhost",
-    user: "root",
-    password: "",
-    database: "test",
+    user: "itcamp",
+    password: "itcamp",
+    database: "db_nodejs_1",
     debug: false
 });
 
 app.set('port', process.env.PORT || 3000);
-app.use(static1(path.join(__dirname, 'public')));
-
-app.use(bodyParser.urlencoded({extended: false}));
-app.use(bodyParser.json());
 
 var router = express.Router();
 
-router.route('/').get((req, res)=>{
-    console.log('main');
-    res.send("main");
-});
-
-router.route('/set').get((req, res)=>{
-    console.log('set');
-    pool.getConnection((err, conn)=>{
+pool.getConnection((err, conn)=>{
         if(err) {
             console.log("error");
             return;
         }
-        conn.query("SELECT * from publisher", (err, result, fields)=>{
+        conn.query("SELECT * from users", (err, result, fields)=>{
             if(err) throw err;
             result.forEach((it)=>{
-                console.log(it.id);
+                console.log(it);
             })
         });
     });
-    res.send("ok");
-});
-
-app.use('/', router);
 
 let server = http.createServer(app);
 server.listen(app.get('port'), ()=>{
